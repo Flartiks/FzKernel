@@ -23,15 +23,16 @@ gcc --version
 ld --version
 nasm -v
 qemu-system-x86_64 --version
-
+```
 ## 🛠️ Build & Run
 
 Build the kernel:
 
 ```bash
 make
-
+```
 Run the kernel in QEMU:
 
 ```bash
 make runkernel
+```
