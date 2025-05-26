@@ -2,6 +2,7 @@
 #include "ports.h"
 #include "idt.h"
 #include "graphics.h"
+#include <stdbool.h>
 
 #define SC_MAX 128
 
