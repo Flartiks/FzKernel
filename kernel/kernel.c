@@ -19,15 +19,7 @@ void kernel_main() {
     init_pit(100);            
     asm volatile ("sti");     
 
-    print("[PRELOAD OS]", make_color(COLOR_RED,COLOR_BLACK));
-    print(" ---> ", make_color(COLOR_LIGHT_BLUE, COLOR_BLACK));
-    sleep(10); 
     print("Welcome in FzKernel\n", make_color(COLOR_LIGHT_RED, COLOR_BLACK));
-
-    print("[PRELOAD OS]", make_color(COLOR_RED,COLOR_BLACK));
-    sleep(10);
-    print(" In future there will be loads of drivers and etc \n", make_color(COLOR_LIGHT_GREEN, COLOR_BLACK));
-
 	sleep(50);
 
     print("[KERNEL]", make_color(COLOR_LIGHT_RED,COLOR_BLACK));

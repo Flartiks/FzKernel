@@ -5,6 +5,7 @@
 #include "utils.h"
 #include "keyboard.h"  
 #include "rtc.h"
+#include "edit.h"
 
 #define INPUT_BUFFER_SIZE 128
 
@@ -24,14 +25,18 @@ void execute_command(const char* cmd) {
     if (!cmd || cmd[0] == '\0') return;
 
     if (strcmp(cmd, "help") == 0) {
-        print("Available commands: help, clear, about, links, rtc, halt\n", make_color(COLOR_LIGHT_CYAN, COLOR_BLACK));
+        print("Available commands: help, clear, about, links, rtc, edit, halt\n", make_color(COLOR_LIGHT_CYAN, COLOR_BLACK));
     } else if (strcmp(cmd, "clear") == 0) {
         clear_screen(make_color(COLOR_BLACK, COLOR_BLACK));
     } else if (strcmp(cmd, "about") == 0) {
-        print("FzKernel Shell v0.1 by Flartiks\n", make_color(COLOR_LIGHT_RED, COLOR_BLACK));
+        print("FzKernel Shell v0.2 by Flartiks\n", make_color(COLOR_LIGHT_RED, COLOR_BLACK));
     } else if (strcmp(cmd, "halt") == 0) {
         print("Halting system...\n", make_color(COLOR_RED, COLOR_BLACK));
+        asm volatile("cli");
         asm volatile ("hlt");
+        print("why does hlt not working? \n", make_color(COLOR_LIGHT_CYAN, COLOR_BLACK)); // or working?
+    } else if (strcmp(cmd, "edit") == 0) {
+        launch_edit();
     } else if (strcmp(cmd, "links" ) == 0) {
         print("github: github.com/flartiks/FzKernel \n", make_color(COLOR_LIGHT_BLUE, COLOR_BLACK));
     } 
