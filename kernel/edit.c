@@ -3,6 +3,7 @@
 #include <stdbool.h>
 #include "utils.h"
 #include "keyboard.h"
+#include "shell.h"
 
 #define INPUT_BUFFER_SIZE 256
 
